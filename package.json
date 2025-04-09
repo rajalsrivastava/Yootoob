@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev:all": "concurrently \"bun run dev:webhook\" \"bun run dev\"",
     "dev": "next dev",
+    "dev:webhook": "ngrok http --url=dominant-gnat-publicly.ngrok-free.app 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -17,12 +19,14 @@
     "@radix-ui/react-tooltip": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.41.0",
     "lucide-react": "^0.487.0",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "svix": "^1.63.1",
     "tailwind-merge": "^3.2.0",
     "tw-animate-css": "^1.2.5",
     "yootoob": "file:"
